@@ -15,7 +15,7 @@ const NavBar = () => {
                         <NavLink className={({ isActive })=> isActive ? 'btn btn-secondary' : 'btn btn-dark'} to="/category/makeups">Maquillajes</NavLink>
                         <NavLink className={({ isActive })=> isActive ? 'btn btn-secondary' : 'btn btn-dark'} to="/category/accessories">Accesorios</NavLink>
                     </Nav>
-                    <CartWidget />
+                    <NavLink to="/cart"> <CartWidget /> </NavLink>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
