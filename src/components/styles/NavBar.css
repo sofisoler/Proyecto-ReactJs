@@ -1,0 +1,23 @@
+.navbar__title {
+    cursor: default;
+}
+
+.navbar__link {
+    color: #000000;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.navbar__link:hover {
+    color: #d2691e9d;
+}
+
+.navbar__link-active {
+    color: #d2691e;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.navbar__link-active:hover {
+    color: #d2691e;
+}
