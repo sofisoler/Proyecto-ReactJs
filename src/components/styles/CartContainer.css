@@ -1,0 +1,27 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-container img {
+    width: 12rem;
+    margin-right: 1rem;
+}
+
+.cart-container label {
+    padding-right: 1rem;
+}
+
+.cart-container__btn {
+    border: none;
+    color: #ffffff;
+    background-color: #d2691e;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.cart-container__btn:hover {
+    background-color: #d2691e9d;
+}

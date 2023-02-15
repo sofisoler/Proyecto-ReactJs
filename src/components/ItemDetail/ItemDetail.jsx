@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount"
+import '../styles/ItemDetail.css'
 
 const ItemDetail = ({producto}) => {
     
@@ -9,7 +10,6 @@ const ItemDetail = ({producto}) => {
     const { agregarCarrito } = useCartContext()
 
     const onAdd = (cant) => {
-        console.log(cant);
         agregarCarrito({ ...producto, cantidad: cant})
         setIsInCount(false)
     }
@@ -17,22 +17,21 @@ const ItemDetail = ({producto}) => {
     return (
         <div className="container mt-5">
             <div className="row">
-                <div className="col-6">
-                    <img src={producto.image} className="w-50"/>
-                    <h2>Nombre: {producto.name}</h2>
-                    <p>Categoria: {producto.category}</p>
-                    <p>Precio: {producto.price}</p>
+                <div className="detail__description col-6">
+                    <img src={producto.image} className="detail__image"/>
+                    <p className="detail__title">{producto.name}</p>
+                    <p className="detail__price">${producto.price}</p>
                 </div>
-                <div className="col-6">
+                <div className="col-6 detail__count">
                     {isInCount ? 
                         <ItemCount onAdd={onAdd} />
                     :
                         <>
                             <Link to={'/cart'}>
-                                <button className="btn btn-outline-secondary">Ir al carrito</button>
+                                <button className="detail__btn">Ir al carrito</button>
                             </Link>
                             <Link to={'/'}>
-                                <button className="btn btn-outline-secondary">Seguir comprando</button>
+                                <button className="detail__btn">Seguir comprando</button>
                             </Link>
                         </>
                     }

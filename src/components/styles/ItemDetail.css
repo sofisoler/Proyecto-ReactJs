@@ -1,0 +1,37 @@
+.detail__description {
+    cursor: default;
+    text-align: center;
+}
+
+.detail__image {
+    width: 15rem;
+}
+
+.detail__title {
+    font-size: 1.1rem;
+}
+
+.detail__price {
+    font-weight: 500;
+    color: #808080;
+}
+
+.detail__count {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail__btn {
+    border: none;
+    color: #ffffff;
+    background-color: #d2691e;
+    padding: 0.3rem;
+    transition: all 0.3s;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.detail__btn:hover {
+    background-color: #d2691e9d;
+}

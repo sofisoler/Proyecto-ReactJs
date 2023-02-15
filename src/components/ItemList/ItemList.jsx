@@ -1,14 +1,9 @@
 import Item from "../Item/Item"
+import '../styles/ItemList.css'
 
 const ItemList = ({productos}) => {
   return (
-    <div style={
-      {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-      }
-    }>
+    <div className="list">
       {
         productos.map( producto => <Item key={producto.key} producto={producto} />) 
       }

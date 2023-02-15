@@ -1,0 +1,12 @@
+.count__btn {
+    border: none;
+    color: #ffffff;
+    background-color: #d2691e;
+    padding: 0.3rem;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.count__btn:hover {
+    background-color: #d2691e9d;
+}
