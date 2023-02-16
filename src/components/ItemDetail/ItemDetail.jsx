@@ -23,6 +23,7 @@ const ItemDetail = ({producto}) => {
                     <p className="detail__price">${producto.price}</p>
                 </div>
                 <div className="col-6 detail__count">
+                    <p className="m-5">{producto.description}</p>
                     {isInCount ? 
                         <ItemCount onAdd={onAdd} />
                     :
