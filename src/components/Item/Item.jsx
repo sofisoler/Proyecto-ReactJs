@@ -10,12 +10,18 @@ const Item = ({producto}) => {
             </div>
             <div className='card-body'>
                 <img src={producto.image} className='w-50' />
-                <p className="card__price">${producto.price}</p>
             </div>
             <div className='card-footer'>
-                <Link to={`/detail/${producto.id}`}>
-                    <button className='card__btn w-100'>Ir a Detalle</button>
-                </Link>
+                {producto.stock ? (
+                    <>
+                        <p className="card__price">${producto.price}</p>
+                        <Link to={`/detail/${producto.id}`}>
+                            <button className='card__btn w-100'>Ir a Detalle</button>
+                        </Link>
+                    </>
+                ) : (
+                    <p>No hay stock</p>
+                )}
             </div>
         </div>
     </div>
