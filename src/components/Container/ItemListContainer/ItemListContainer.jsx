@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import ItemList from "../../../components/ItemList/ItemList"
+import Loader from "../../Loader/Loader"
 
 export const ItemListContainer  = () => {  
     const [productos, setProductos] = useState([]) 
@@ -35,9 +36,7 @@ export const ItemListContainer  = () => {
         <div className='container'>
             {   loading 
                 ? 
-                    <center>
-                        <h1>Cargando...</h1>
-                    </center>
+                    <Loader />
                 :
                     <ItemList productos={productos} />
             }
