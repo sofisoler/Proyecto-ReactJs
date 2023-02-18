@@ -4,6 +4,7 @@ import CartWidget from "../CartWidget/CartWidget"
 import '../styles/NavBar.css'
 
 const NavBar = () => {
+    
     return (
         <>
             <Navbar bg="light" variant="light">

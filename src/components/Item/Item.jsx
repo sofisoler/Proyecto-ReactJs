@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import '../styles/Item.css'
 
 const Item = ({producto}) => {
+
   return (
     <div className='col-4 p-2 mt-5'>
         <div key={producto.id} className='card p-2 text-center shadow'>
@@ -12,16 +13,21 @@ const Item = ({producto}) => {
                 <img src={producto.image} className='w-50' />
             </div>
             <div className='card-footer'>
-                {producto.stock ? (
-                    <>
-                        <p className="card__price">${producto.price}</p>
-                        <Link to={`/detail/${producto.id}`}>
-                            <button className='card__btn w-100'>Ir a Detalle</button>
-                        </Link>
-                    </>
-                ) : (
-                    <p>No hay stock</p>
-                )}
+                {   producto.stock 
+                    ? 
+                    (
+                        <>
+                            <p className="card__price">${producto.price}</p>
+                            <Link to={`/detail/${producto.id}`}>
+                                <button className='card__btn w-100'>Ir a Detalle</button>
+                            </Link>
+                        </>
+                    ) 
+                    : 
+                    (
+                        <p>No hay stock</p>
+                    )
+                }
             </div>
         </div>
     </div>

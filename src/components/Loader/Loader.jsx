@@ -1,7 +1,8 @@
 import React from 'react'
 import '../styles/Loader.css'
 
-function Loader() {
+const Loader = () => {
+
   return (
     <center>
         <span class="loader mt-5"></span>

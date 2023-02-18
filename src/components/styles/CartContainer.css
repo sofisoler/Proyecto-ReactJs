@@ -14,6 +14,11 @@
     padding-right: 1rem;
 }
 
+.cart-container p {
+    cursor: default;
+    font-size: 1.2rem;
+}
+
 .cart-container__btn {
     border: none;
     color: #ffffff;

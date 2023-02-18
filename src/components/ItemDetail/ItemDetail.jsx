@@ -23,18 +23,19 @@ const ItemDetail = ({producto}) => {
                     <p className="detail__price">${producto.price}</p>
                 </div>
                 <div className="col-6 detail__count">
-                    <p className="m-5">{producto.description}</p>
-                    {isInCount ? 
-                        <ItemCount onAdd={onAdd} />
-                    :
-                        <>
-                            <Link to={'/cart'}>
-                                <button className="detail__btn">Ir al carrito</button>
-                            </Link>
-                            <Link to={'/'}>
-                                <button className="detail__btn">Seguir comprando</button>
-                            </Link>
-                        </>
+                    <p className="detail__description m-5">{producto.description}</p>
+                    {   isInCount 
+                        ?
+                            <ItemCount onAdd={onAdd} />
+                        :
+                            <center>
+                                <Link to={'/cart'}>
+                                    <button className="detail__btn">Ir al carrito</button>
+                                </Link>
+                                <Link to={'/'}>
+                                    <button className="detail__btn">Seguir comprando</button>
+                                </Link>
+                            </center>
                     }
                 </div>
             </div>

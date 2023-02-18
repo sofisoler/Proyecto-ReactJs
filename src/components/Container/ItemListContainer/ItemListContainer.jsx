@@ -4,7 +4,8 @@ import { collection, getDocs, getFirestore, query, where } from 'firebase/firest
 import ItemList from "../../../components/ItemList/ItemList"
 import Loader from "../../Loader/Loader"
 
-export const ItemListContainer  = () => {  
+export const ItemListContainer  = () => {
+
     const [productos, setProductos] = useState([]) 
     const [loading, setLoading] = useState(true)
     const { categoryId } = useParams()
@@ -12,24 +13,13 @@ export const ItemListContainer  = () => {
     useEffect(() => {
         const db = getFirestore()
         const queryCollection = collection(db, 'productos')
-        if (categoryId) {
-            
-            const queryCollectionFilter = query(queryCollection, where('category', '==', categoryId))
-            
-            getDocs(queryCollectionFilter)
-            .then(respuestaPromesa => {       
-                setProductos(respuestaPromesa.docs.map(prod => ({id: prod.id, ...prod.data()})))
-             })        
-             .catch(err => console.log(err))
-             .finally(()=> setLoading(false))  
-        } else {    
-            getDocs(queryCollection)
-            .then(respuestaPromesa => {       
-                setProductos(respuestaPromesa.docs.map(prod => ({id: prod.id, ...prod.data()})))
-             })        
-             .catch(err => console.log(err))
-             .finally(()=> setLoading(false))  
-        }
+        const queryCollectionFilter = categoryId ? query(queryCollection, where('category', '==', categoryId)) : queryCollection
+        getDocs(queryCollectionFilter)
+        .then(respuestaPromesa => {       
+            setProductos(respuestaPromesa.docs.map(prod => ({id: prod.id, ...prod.data()})))
+            })        
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))  
     },[categoryId])
 
     return (
