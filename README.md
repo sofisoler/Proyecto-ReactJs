@@ -28,3 +28,4 @@ https://sofisoler.github.io/Proyecto-ReactJs/
 - "react-bootstrap": "2.7.0": Framework para proporcionarle estilos a la aplicación.
 - "react-router-dom": "6.7.0": Librería para definir las rutas de navegación dentro de la aplicación.
 - "vite": "4.0.0": Empaquetador.
+- "sweetalert2": "11.7.2": Librería para crear alertas personalizadas.
